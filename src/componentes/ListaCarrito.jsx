@@ -10,12 +10,20 @@ const ListaCarrito  = () => {
     
     const { listaCarrito } = useListadoCarrito();
 
-    console.log(listaCarrito)
- 
+    let totalCompra = listaCarrito.reduce((total, producto) => {
+        return total + producto.precioTotal;
+    }, 0)
+
+    console.log(listaCarrito.map((producto) =>  producto.precioTotal))
 
     return(
+        <>
+        <div className='contenedor-titulo'>
+            <h1>CARRITO</h1>
+            <h1>{`TOTAL: RD$ ${totalCompra}`}</h1>
+        </div>
         <div className='contenedor-lista-carrito'>
-            {listaCarrito.map((producto, i) => (
+            {listaCarrito?.map((producto, i) => (
                 <ProductoCarrito 
                 key={i}
                 id={producto.id}
@@ -27,6 +35,8 @@ const ListaCarrito  = () => {
             ))}
         <BotonCambioPagina />
         </div>
+        </>
+
     )
 }
 

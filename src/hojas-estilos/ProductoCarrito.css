@@ -1,0 +1,117 @@
+/* Estilos para producto en carrito con distribución horizontal */
+.contenedor-producto-carrito {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.contenedor-producto-carrito:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+}
+
+/* Contenedor de titulares (nombre y medida) */
+.contenedor-titulares {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    flex-grow: 1;
+}
+
+.nombre {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.medida {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Contenedor de cantidad con botones de suma y resta */
+.contenedor-cantidad {
+    display: flex;
+    align-items: center;
+    margin: 0 15px;
+    background-color: #f0f0f0;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.contenedor-restar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contenedor-restar:hover {
+    background-color: #e0e0e0;
+}
+
+.restar, .sumar {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.cantidad {
+    margin: 0 10px;
+    font-weight: 500;
+    color: #555;
+}
+
+/* Contenedor de precio total */
+.contenedor-precio-total {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #2a9d8f;
+    margin-right: 15px;
+}
+
+/* Contenedor de borrador (ícono de papelera) */
+.contenedor-borrador {
+    cursor: pointer;
+    color: #e74c3c;
+    transition: color 0.3s ease;
+}
+
+.borrador {
+    font-size: 1.3rem;
+}
+
+.contenedor-borrador:hover .borrador {
+    color: #c0392b;
+    transform: scale(1.1);
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .contenedor-producto-carrito {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .contenedor-titulares,
+    .contenedor-cantidad,
+    .contenedor-precio-total,
+    .contenedor-borrador {
+        margin: 5px 0;
+    }
+}

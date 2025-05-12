@@ -9,8 +9,8 @@ const Productos = ({nombre, medida, precio, id}) => {
     const { agregarCarrito } = useListadoCarrito();
 
     const agregarAlCarrito = () => {
-         console.log("Agregando:", {nombre, medida, precio}); 
-         agregarCarrito({nombre, medida, precio, id, cantidad: 1}); 
+/*          console.log("Agregando:", {nombre, medida, precio}); 
+ */         agregarCarrito({nombre, medida, precio, id, cantidad: 1}); 
     }
     
     return (

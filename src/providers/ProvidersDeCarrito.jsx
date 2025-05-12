@@ -10,11 +10,37 @@ export const ListadoCarrito = ({ children }) => {
     const [listaCarrito, setListaCarrito] = useState([]);
 
     const agregarCarrito = (producto) => {
-        return setListaCarrito(prevCarrito => [producto, ...prevCarrito]);
+         setListaCarrito(carritoActual => {
+            return [producto, ...carritoActual]
+         });
     }
 
+    const sumarCantidad =(productoId) => {
+            setListaCarrito(carritoActual => (
+                carritoActual.map(producto => (
+                    producto.id === productoId ?
+                    { ...producto, cantidad: producto.cantidad + 1,} 
+                    : producto
+                ))
+            ))
+    
+    }
+
+        const restarCantidad =(productoId) => {
+            setListaCarrito(carritoActual => (
+                carritoActual.map(producto => (
+                    producto.id === productoId ?
+                    {...producto, cantidad: producto.cantidad - 1} 
+                    : producto
+                ))
+            ))
+    
+    }
+
+
     return (
-        <contextoCarrito.Provider value={{listaCarrito, agregarCarrito}}>
+        <contextoCarrito.Provider
+         value={{listaCarrito, agregarCarrito, sumarCantidad, restarCantidad }}>
             {children}
         </contextoCarrito.Provider>
     )
