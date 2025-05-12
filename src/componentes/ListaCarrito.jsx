@@ -14,7 +14,6 @@ const ListaCarrito  = () => {
         return total + producto.precioTotal;
     }, 0)
 
-    console.log(listaCarrito.map((producto) =>  producto.precioTotal))
 
     return(
         <>
