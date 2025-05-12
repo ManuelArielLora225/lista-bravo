@@ -1,0 +1,62 @@
+/* ListaProductos.css */
+.contenedor-lista-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+    background-color: #f8f8f8; /* Fondo claro */
+}
+
+/* Media queries para responsive */
+@media (max-width: 1200px) {
+    .contenedor-lista-productos {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contenedor-lista-productos {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 15px;
+        padding: 15px;
+        background-color: #fff; /* Fondo blanco en móviles */
+    }
+}
+
+@media (max-width: 480px) {
+    .contenedor-lista-productos {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 15px;
+    }
+}
+
+/* Elementos hijos (las tarjetas de producto) */
+.contenedor-lista-productos > * {
+    border: 2px solid #e62429; /* Rojo Bravo para bordes */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(230, 36, 41, 0.1); /* Sombra roja suave */
+    transition: all 0.3s ease;
+}
+
+.contenedor-lista-productos > *:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(230, 36, 41, 0.15); /* Sombra más intensa al hover */
+    border-color: #000; /* Borde negro al hover */
+}
+
+/* Título de sección opcional (si añades un h1 arriba) */
+.lista-productos-titulo {
+    color: #e62429; /* Rojo Bravo */
+    text-align: center;
+    padding: 20px 0;
+    font-size: 2rem;
+    border-bottom: 2px solid #000; /* Línea negra */
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
