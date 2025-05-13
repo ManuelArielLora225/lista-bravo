@@ -2,7 +2,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 export const DatosProductos = [
   // Aceites
-  { nombre: "Aceite oliva bravo", medida: "17 oz", precio: 365, categoria: ["Aceites y grasas", "Todos"], id: uuidv4(), id: uuidv4()},
+  { nombre: "Aceite oliva bravo", medida: "17 oz", precio: 365, categoria: ["Aceites y grasas", "Todos"], id: uuidv4()},
   { nombre: "Aceite oliva bravo", medida: "8.5 oz", precio: 195, categoria: ["Aceites y grasas", "Todos"], id: uuidv4()},
   { nombre: "Aceite oliva mediterráneo bravo", medida: "8.5 oz", precio: 99, categoria: ["Aceites y grasas", "Todos"], id: uuidv4()},
   { nombre: "Aceite oliva mediterráneo bravo", medida: "17 oz", precio: 149, categoria: ["Aceites y grasas", "Todos"], id: uuidv4()},

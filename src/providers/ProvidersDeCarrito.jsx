@@ -26,7 +26,7 @@ export const ListadoCarrito = ({ children }) => {
     
     }
 
-        const restarCantidad =(productoId) => {
+        const restarCantidad =(productoId) => { 
             setListaCarrito(carritoActual => (
                 carritoActual.map(producto => (
                     producto.id === productoId ?
@@ -37,10 +37,17 @@ export const ListadoCarrito = ({ children }) => {
     
     }
 
+       const eliminar = (productoId) => {
+           setListaCarrito(carritoActual => 
+            carritoActual.filter(producto => producto.id !== productoId))
+       }
+
+       
+
 
     return (
         <contextoCarrito.Provider
-         value={{listaCarrito, agregarCarrito, sumarCantidad, restarCantidad }}>
+         value={{listaCarrito, agregarCarrito, sumarCantidad, restarCantidad, eliminar }}>
             {children}
         </contextoCarrito.Provider>
     )

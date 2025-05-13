@@ -2,17 +2,20 @@ import React from 'react'
 import BotonCambioPagina from './BotonCambioPagina'
 import { useListadoCarrito } from '../providers/ProvidersDeCarrito';
 import ProductoCarrito from './ProductoCarrito';
-/* import { LiaSignInAltSolid } from 'react-icons/lia';
- */
+
 
 
 const ListaCarrito  = () => {
     
-    const { listaCarrito } = useListadoCarrito();
+    const { listaCarrito, eliminar } = useListadoCarrito();
 
-    let totalCompra = listaCarrito.reduce((total, producto) => {
-        return total + producto.precioTotal;
-    }, 0)
+    const eliminarDelCarrito = (productoId) => {
+        eliminar(productoId)
+    }
+
+
+  const totalCompra = listaCarrito.reduce((total, producto) => 
+                    total + (producto.precio * producto.cantidad), 0);
 
 
     return(
@@ -29,7 +32,7 @@ const ListaCarrito  = () => {
                 nombre={producto.nombre}
                 medida={producto.medida}
                 cantidad={producto.cantidad}
-                precioTotal={producto.precio}
+                precioTotal={producto.precio * producto.cantidad }
                 />
             ))}
         <BotonCambioPagina />
