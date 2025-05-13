@@ -7,8 +7,7 @@ import Productos from './Productos';
 
 const ProductoCarrito = ({nombre, medida, precioTotal, cantidad, id }) => {
 
-    const { sumarCantidad } = useListadoCarrito();
-    const { restarCantidad } = useListadoCarrito();
+    const { sumarCantidad, restarCantidad, eliminar } = useListadoCarrito();
 
     const sumarLaCantidad = () => {   
          sumarCantidad(id);
@@ -18,7 +17,12 @@ const ProductoCarrito = ({nombre, medida, precioTotal, cantidad, id }) => {
          restarCantidad(id);
     }
 
+    const eliminarDelCarrito = () => {
+        eliminar(id)
+    }
+
    const total = precioTotal * cantidad; 
+
 
     return (
 
@@ -40,7 +44,7 @@ const ProductoCarrito = ({nombre, medida, precioTotal, cantidad, id }) => {
                 <p className='precio-total'>{`RD$ ${total}`}</p>
             </div>
             <div className='contenedor-borrador'>
-                <FaRegTrashCan className='borrador'/>
+                <FaRegTrashCan className='borrador' onClick={eliminarDelCarrito}/>
             </div>
 
         </div>

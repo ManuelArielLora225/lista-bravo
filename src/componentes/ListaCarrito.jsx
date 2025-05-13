@@ -1,9 +1,9 @@
 import React from 'react'
+import '../hojas-estilos/ListaCarrito.css'
 import BotonCambioPagina from './BotonCambioPagina'
 import { useListadoCarrito } from '../providers/ProvidersDeCarrito';
 import ProductoCarrito from './ProductoCarrito';
-/* import { LiaSignInAltSolid } from 'react-icons/lia';
- */
+
 
 
 const ListaCarrito  = () => {
@@ -11,15 +11,15 @@ const ListaCarrito  = () => {
     const { listaCarrito } = useListadoCarrito();
 
     let totalCompra = listaCarrito.reduce((total, producto) => {
-        return total + producto.precioTotal;
+        return total + (producto.precio * producto.cantidad);
     }, 0)
 
 
     return(
         <>
         <div className='contenedor-titulo'>
-            <h1>CARRITO</h1>
-            <h1>{`TOTAL: RD$ ${totalCompra}`}</h1>
+            <h1 className='titulo-carrito'>CARRITO</h1>
+            <h1 className='total-compra'>{`TOTAL: RD$ ${totalCompra}`}</h1>
         </div>
         <div className='contenedor-lista-carrito'>
             {listaCarrito?.map((producto, i) => (

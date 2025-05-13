@@ -1,0 +1,60 @@
+
+/* Estilos para la notificación "Enviado al Carrito" */
+.notificacion-Enviado {
+    background-color: white !important;
+    color: #333 !important;
+    font-weight: 600 !important;
+    border-radius: 10px !important;
+    padding: 12px 20px !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+    border-left: 4px solid #2a9d8f !important;
+    font-size: 1rem !important;
+    min-width: 200px;
+    text-align: center;
+}
+
+/* Animación para la notificación */
+.Toastify__toast-enter {
+    transform: translateX(-100%);
+}
+
+.Toastify__toast-enter-active {
+    transform: translateX(0);
+    transition: transform 300ms ease-out;
+}
+
+.Toastify__toast-exit {
+    transform: translateX(0);
+}
+
+.Toastify__toast-exit-active {
+    transform: translateX(-100%);
+    transition: transform 200ms ease-in;
+}
+
+/* Personalización del contenedor de toast para posición más adecuada */
+.Toastify__toast-container--top-left {
+    top: 4em !important;
+    left: 1em !important;
+}
+
+/* Hover effect para la notificación */
+.notificacion-Enviado:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15) !important;
+    background-color: #f9f9f9 !important;
+}
+
+/* Media queries para dispositivos móviles */
+@media (max-width: 600px) {
+    .notificacion-Enviado {
+        padding: 10px 15px !important;
+        font-size: 0.9rem !important;
+        min-width: 150px;
+    }
+    
+    .Toastify__toast-container--top-left {
+        left: 0 !important;
+        top: 3em !important;
+        width: auto !important;
+    }
+}

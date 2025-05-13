@@ -3,6 +3,7 @@ import Menu from './componentes/Menu'
 import { FiltroProvider } from './providers/ProvidersDeFiltros';
 import BotonCambioPagina from './componentes/BotonCambioPagina';
 
+
  
 function Inicio() {
   return (
