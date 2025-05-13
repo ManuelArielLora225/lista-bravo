@@ -11,12 +11,6 @@ const ListaCarrito  = () => {
     const { listaCarrito, eliminar } = useListadoCarrito();
 
 
-
-    const eliminarDelCarrito = (productoId) => {
-        eliminar(productoId)
-    }
-
-
   const totalCompra = listaCarrito.reduce((total, producto) => 
                     total + (producto.precio * producto.cantidad), 0);
 
