@@ -25,7 +25,7 @@ const ListaCarrito  = () => {
         <div className='contenedor-lista-carrito'>
             {listaCarrito?.map((producto, i) => (
                 <ProductoCarrito 
-                key={i}
+                key={producto.id}
                 id={producto.id}
                 nombre={producto.nombre}
                 medida={producto.medida}
