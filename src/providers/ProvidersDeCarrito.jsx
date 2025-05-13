@@ -38,7 +38,7 @@ export const ListadoCarrito = ({ children }) => {
              
         })
         
-    }
+    };
 
 
     const sumarCantidad =(productoId) => {
