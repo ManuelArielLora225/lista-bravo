@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaRegTrashCan } from "react-icons/fa6";
 import '../hojas-estilos/ProductoCarrito.css'
 import { useListadoCarrito } from '../providers/ProvidersDeCarrito'
@@ -9,6 +9,7 @@ const ProductoCarrito = ({nombre, medida, precioTotal, cantidad, id }) => {
 
 
     const { sumarCantidad, restarCantidad, eliminar } = useListadoCarrito();
+    const [eliminado, setEliminado] = useState(false)
 
 
     const sumarLaCantidad = () => {   
@@ -20,7 +21,9 @@ const ProductoCarrito = ({nombre, medida, precioTotal, cantidad, id }) => {
     }
 
     const eliminarDelCarrito = () => {
-        eliminar(id)
+        setEliminado(true)
+        setTimeout(() => eliminar(id), 1000);
+        
     }
 
 
@@ -30,7 +33,7 @@ const ProductoCarrito = ({nombre, medida, precioTotal, cantidad, id }) => {
 
     return (
 
-        <div className='contenedor-producto-carrito'>
+        <div className={`contenedor-producto-carrito ${eliminado ? 'animacion-eliminar': '' }`}>
             <div className='contenedor-titulares'>
                 <h2 className='nombre'>{nombre}</h2>
                 <p className='medida'>{medida}</p>

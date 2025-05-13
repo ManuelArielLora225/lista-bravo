@@ -54,10 +54,15 @@ export const ListadoCarrito = ({ children }) => {
 
 
         const restarCantidad = (productoId) => {
-            const cantidadCero = listaCarrito.find(producto => producto.cantidad === 1);
+            const cantidadCero = listaCarrito.find(producto => producto.cantidad === 0);
             if(cantidadCero){
-                eliminar(productoId)
-            } else {
+                setListaCarrito(carritoActual => (
+                carritoActual.map(producto => (
+                    producto.id === productoId ?
+                    {...producto, cantidad: 0 } 
+                    : producto
+                ))
+            ))} else {
             setListaCarrito(carritoActual => (
                 carritoActual.map(producto => (
                     producto.id === productoId ?

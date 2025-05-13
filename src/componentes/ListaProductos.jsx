@@ -35,17 +35,3 @@ const ListaProductos = () => {
 
 export default ListaProductos
 
-
-/*     return(
-    
-    <div className='contenedor-lista-productos'>
-        {DatosProductos.map((producto,i) => (
-            <Productos 
-            key={i}
-            nombre={producto.nombre}
-            medida={producto.medida}
-            precio={producto.precio}
-            />
-        ))}
-    </div>
-    ) */
