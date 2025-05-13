@@ -8,11 +8,18 @@ import ProductoCarrito from './ProductoCarrito';
 
 const ListaCarrito  = () => {
     
-    const { listaCarrito } = useListadoCarrito();
+    const { listaCarrito, eliminar } = useListadoCarrito();
 
-    let totalCompra = listaCarrito.reduce((total, producto) => {
-        return total + (producto.precio * producto.cantidad);
-    }, 0)
+
+
+    const eliminarDelCarrito = (productoId) => {
+        eliminar(productoId)
+    }
+
+
+  const totalCompra = listaCarrito.reduce((total, producto) => 
+                    total + (producto.precio * producto.cantidad), 0);
+
 
 
     return(
@@ -29,7 +36,7 @@ const ListaCarrito  = () => {
                 nombre={producto.nombre}
                 medida={producto.medida}
                 cantidad={producto.cantidad}
-                precioTotal={producto.precio}
+                precioTotal={producto.precio * producto.cantidad }
                 />
             ))}
         <BotonCambioPagina />
